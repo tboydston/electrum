@@ -610,6 +610,18 @@ class Commands:
         else:
             return False
 
+    @command('w')
+    def createaddress(self, number=10):
+        """Create a new address or addresses."""
+        print number
+        out = []
+        i = 0
+        while ( i < number ):
+            out.append(self.wallet.create_new_address(False))
+            i = i+1
+            print i
+
+        return out
 
     @command('w')
     def addrequest(self, amount, memo='', expiration=None, force=False):
@@ -721,6 +733,7 @@ command_options = {
     'pending':     (None, "--pending",     "Show only pending requests."),
     'expired':     (None, "--expired",     "Show only expired requests."),
     'paid':        (None, "--paid",        "Show only paid requests."),
+    'number':      ("-n", "--number",      "Number of addresses to create."),
 }
 
 
@@ -729,6 +742,7 @@ from transaction import tx_from_str
 json_loads = lambda x: json.loads(x, parse_float=lambda x: str(Decimal(x)))
 arg_types = {
     'num': int,
+    'number': long,
     'nbits': int,
     'imax': int,
     'entropy': long,
