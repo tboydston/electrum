@@ -611,7 +611,7 @@ class Commands:
             return False
 
     @command('w')
-    def createaddress(self, number=10):
+    def createaddress(self, number=1):
         """Create a new address or addresses."""
         print number
         out = []
