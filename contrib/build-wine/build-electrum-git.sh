@@ -2,7 +2,11 @@
 
 # You probably need to update only this link
 ELECTRUM_GIT_URL=git://github.com/fyookball/electrum.git
+<<<<<<< HEAD
 BRANCH=cash
+=======
+BRANCH=pyqt4
+>>>>>>> 95e86cddee5841f87d6858e6900b9b37685856e6
 NAME_ROOT=electrum
 
 
